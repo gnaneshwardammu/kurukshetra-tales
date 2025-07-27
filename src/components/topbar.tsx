@@ -2,8 +2,7 @@
 
 
 const navLinks = [
-  { href: "#home", label: "Home" },
-  { href: "#familyTree", label: "Family Tree" },
+  { href: "/familytree", label: "Genealogy" },
   { href: "#books", label: "Books" },
 ];
 
@@ -13,16 +12,16 @@ import { ModeToggle } from "./mode-toggle";
 
 
 
-export default function Header() {
+export default function TopBar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="fixed w-full flex justify-between items-center py-4 px-10 shadow-md  top-0 z-50  bg-[#FFFDF6]/10 border-transparent border/10 backdrop-blur-lg text-black dark:text-white">
-      <h1 className="text-xl font-bold tracking-wide ">
-        Mahabharatam
+    <header className="fixed w-full flex justify-between items-center py-4 px-10   top-0 z-50   border-transparent border/10 backdrop-blur-lg text-black dark:text-white">
+      <h1 className="text-xl font-bold tracking-tight">
+        Mahabharatam.
       </h1>
       {/* Desktop nav */}
-      <nav className="hidden md:flex gap-6 text-sm font-medium items-center">
+      <nav className="hidden md:flex gap-6 text-sm font-medium items-center lowercase">
         {navLinks.map((link, idx) => (
           <a
             key={link.href}
@@ -32,8 +31,8 @@ export default function Header() {
             {link.label}
           </a>
         ))}
-        <ModeToggle />
  
+        <ModeToggle />
       </nav>
       {/* Mobile hamburger */}
       <div className="md:hidden flex items-center text-black">
@@ -49,7 +48,7 @@ export default function Header() {
       </div>
       {/* Mobile menu */}
       {menuOpen && (
-        <nav className="absolute top-full left-0 w-full shadow-md flex flex-col gap-4 py-4 px-6 z-50 md:hidden animate-fade-in">
+        <nav className="absolute top-full left-0 w-full  flex flex-col gap-4 py-4 px-6 z-50 md:hidden animate-fade-in transition-all duration-300">
           {navLinks.map((link, idx) => (
             <a
               key={link.href}
@@ -60,7 +59,7 @@ export default function Header() {
               {link.label}
             </a>
           ))}
-          
+          <ModeToggle/>
         </nav>
       )}
     </header>
