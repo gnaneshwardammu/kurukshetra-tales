@@ -8,18 +8,18 @@ import "swiper/css"
 import "swiper/css/effect-coverflow"
 import "swiper/css/pagination"
 import "swiper/css/navigation"
-import { SparklesIcon } from "lucide-react"
+
 import {
   Autoplay,
   EffectCoverflow,
   Navigation,
   Pagination,
 } from "swiper/modules"
+import { useRouter } from "next/navigation"
 
-import { Badge } from "@/components/ui/badge"
 
 interface CarouselProps {
-  images: { src: string; alt: string }[]
+  images: { src: string; alt: string, name: string, id: string }[]
   autoplayDelay?: number
   showPagination?: boolean
   showNavigation?: boolean
@@ -58,12 +58,12 @@ export const CardCarousel: React.FC<CarouselProps> = ({
     background: none;
   }
   `
+  const router = useRouter()
   return (
     <section className="w-ace-y-4">
       <style>{css}</style>
-      <div className="mx-auto w-full max-w-4xl rounded-[24px] border border-black/5 p-2 shadow-sm md:rounded-t-[44px]">
-        <div className="relative mx-auto flex w-full flex-col rounded-[24px] border border-black/5 bg-neutral-800/5 p-2 shadow-sm md:items-start md:gap-8 md:rounded-b-[20px] md:rounded-t-[40px] md:p-2">
-          
+      <div className="mx-auto w-full max-w-sm md:max-w-4xl rounded-[24px] p-2 md:rounded-t-[44px]">
+        <div className="relative mx-auto flex w-full flex-col rounded-[24px]    p-2  md:items-start md:gap-8 md:rounded-b-[20px] md:rounded-t-[40px] md:p-2">
 
           <div className="flex w-full items-center justify-center gap-4">
             <div className="w-full">
@@ -88,16 +88,16 @@ export const CardCarousel: React.FC<CarouselProps> = ({
                 navigation={
                   showNavigation
                     ? {
-                        nextEl: ".swiper-button-next",
-                        prevEl: ".swiper-button-prev",
-                      }
+                      nextEl: ".swiper-button-next",
+                      prevEl: ".swiper-button-prev",
+                    }
                     : undefined
                 }
                 modules={[EffectCoverflow, Autoplay, Pagination, Navigation]}
               >
                 {images.map((image, index) => (
                   <SwiperSlide key={index}>
-                    <div className="size-full rounded-3xl">
+                    <div onClick={() => router.push(`/character/${image.id}`)} className="size-full rounded-3xl">
                       <Image
                         src={image.src}
                         width={500}
@@ -106,11 +106,12 @@ export const CardCarousel: React.FC<CarouselProps> = ({
                         alt={image.alt}
                       />
                     </div>
+                    <div className="text-black  dark:text-white text-center text-xl font-bold my-2">{image.name}</div>
                   </SwiperSlide>
                 ))}
                 {images.map((image, index) => (
                   <SwiperSlide key={index}>
-                    <div className="size-full rounded-3xl">
+                    <div onClick={() => router.push(`/character/${image.id}`)} className="size-full rounded-3xl">
                       <Image
                         src={image.src}
                         width={200}
@@ -119,6 +120,7 @@ export const CardCarousel: React.FC<CarouselProps> = ({
                         alt={image.alt}
                       />
                     </div>
+                    <div className="text-black dark:text-white text-center text-xl font-bold my-2">{image.name}</div>
                   </SwiperSlide>
                 ))}
               </Swiper>
