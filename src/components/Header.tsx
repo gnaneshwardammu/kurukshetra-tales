@@ -9,6 +9,7 @@ const navLinks = [
 
 
 import {  useState } from "react";
+import { ModeToggle } from "./mode-toggle";
 
 
 
@@ -16,12 +17,12 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="fixed w-full flex justify-between items-center py-4 px-6 shadow-md  top-0 z-50  bg-[#FFFDF6]/10 border-transparent border/10 backdrop-blur-lg text-white">
-      <h1 className="text-2xl font-bold tracking-wide ">
+    <header className="fixed w-full flex justify-between items-center py-4 px-10 shadow-md  top-0 z-50  bg-[#FFFDF6]/10 border-transparent border/10 backdrop-blur-lg text-black dark:text-white">
+      <h1 className="text-xl font-bold tracking-wide ">
         Mahabharatam
       </h1>
       {/* Desktop nav */}
-      <nav className="hidden md:flex gap-6 text-lg font-medium items-center">
+      <nav className="hidden md:flex gap-6 text-sm font-medium items-center">
         {navLinks.map((link, idx) => (
           <a
             key={link.href}
@@ -31,6 +32,7 @@ export default function Header() {
             {link.label}
           </a>
         ))}
+        <ModeToggle />
  
       </nav>
       {/* Mobile hamburger */}
