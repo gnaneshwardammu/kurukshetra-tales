@@ -103,7 +103,7 @@ export const CardCarousel: React.FC<CarouselProps> = ({
                         width={500}
                         height={500}
                         className="size-full rounded-xl"
-                        alt={image.alt}
+                        alt={image.name}
                       />
                     </div>
                     <div className="text-black  dark:text-white text-center text-xl font-bold my-2">{image.name}</div>
