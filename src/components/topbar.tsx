@@ -18,7 +18,19 @@ export default function TopBar() {
   return (
     <header className="fixed w-full flex justify-between items-center py-4 px-10   top-0 z-50   border-transparent border/10 backdrop-blur-lg text-black dark:text-white">
       <h1 className="text-xl font-bold tracking-tight">
-        Mahabharatam.
+        <img
+          src="/Mahabharatam-eng.png"
+          alt="Mahabharatam Logo"
+          style={{ height: '4rem', width: 'auto', display: 'inline-block', verticalAlign: 'middle', marginRight: '0.5rem' }}
+        />{/*<img
+          src="/Mahabharatam.png"
+          alt="Mahabharatam Logo"
+          style={{ height: '2rem', width: 'auto', display: 'inline-block', verticalAlign: 'middle', marginRight: '0.5rem' }}
+        /><img
+          src="/Mahabharat.png"
+          alt="Mahabharatam Logo"
+          style={{ height: '3rem', width: 'auto', display: 'inline-block', verticalAlign: 'middle', marginRight: '0.5rem' }}
+        />*/}
       </h1>
       {/* Desktop nav */}
       <nav className="hidden md:flex gap-6 text-sm font-medium items-center lowercase">
