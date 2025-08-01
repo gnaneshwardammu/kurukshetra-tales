@@ -1,6 +1,6 @@
 import BookCard from "./BookCard";
 
-let i = 1
+const i = 1
 const books = [{
   title: `Ādhi Parva `,
   image: "/adhiparva.jpg",
