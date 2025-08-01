@@ -19,7 +19,7 @@ import { useRouter } from "next/navigation"
 
 
 interface CarouselProps {
-  images: { src: string; alt: string, name: string, id: string }[]
+  images: { src: string; alt: string, name: string, id: number }[]
   autoplayDelay?: number
   showPagination?: boolean
   showNavigation?: boolean

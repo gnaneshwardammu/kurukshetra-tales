@@ -21,13 +21,13 @@ export default function Home() {
       <video
         ref={videoRef}
         className="absolute top-0 left-0 w-full h-full object-cover z-0"
-        src="/mahabharat.mp4"
+        src="/landing.mp4"
         autoPlay
         loop={false}
         muted
         onEnded={handleVideoEnd}
       />
-      <div className="absolute top-35 left-0 w-full h-full flex flex-col items-center justify-center z-10 bg-opacity-40">
+      <div className="absolute top-40 left-0 w-full h-full flex flex-col items-center justify-center z-10 bg-opacity-40">
         {/*<div className="absolute top-[-100] left-0 w-full z-20 flex justify-center bg-opacity-60 py-4"><img
           src="/Mahabharatam-eng.png"
           alt="Mahabharatam Logo"
