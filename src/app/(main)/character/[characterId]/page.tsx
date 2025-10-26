@@ -1,12 +1,16 @@
 "use client";
 import { characters } from "@/lib/characters";
 import { notFound, useRouter } from "next/navigation";
+import Image from "next/image";
 
-interface Props {
-    params: { characterId: string };
+type Props = {
+    params: {
+        characterId: string
+    },
+    searchParams: { [key: string]: string | string[] | undefined }
 }
 
-export default function CharacterDetailPage({ params }: Props) {
+export default function CharacterDetailPage({ params, searchParams }: Props) {
     const router = useRouter();
     const id = Number(params.characterId);
     const character = characters.find((c) => c.id === id);
@@ -15,9 +19,11 @@ export default function CharacterDetailPage({ params }: Props) {
 
     return (
         <div className="min-h-screen flex flex-col items-center justify-center bg-white py-10 px-4">
-                    <img
+                    <Image
                         src={character.src}
                         alt={character.alt}
+                        width={500}
+                        height={500}
                         className="w-40 h-40 object-cover rounded-full shadow-lg mb-6 border-4 border-orange-200"
                     />
                     <h1 className="text-3xl font-bold text-orange-700 mb-4 text-center">{character.name}</h1>
