@@ -18,16 +18,18 @@ export default function Home() {
 
   return (
     <div className="relative w-full h-screen font-sans overflow-hidden">
-      <video
-        ref={videoRef}
-        className="absolute top-0 left-0 w-full h-full object-cover z-0"
-        src="/landing.mp4"
-        autoPlay
-        loop={false}
-        muted
-        onEnded={handleVideoEnd}
-      />
-      <div className="absolute top-40 left-0 w-full h-full flex flex-col items-center justify-center z-10 bg-opacity-40">
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        <iframe
+          ref={videoRef}
+          className="w-[100vw] h-[100vh] scale-[1.5]"
+          src="https://www.youtube.com/embed/5dQ8DzmD5qM?autoplay=1&controls=0&modestbranding=1&rel=0&showinfo=0&color=white&iv_load_policy=3&enablejsapi=1&mute=1&playsinline=1&fs=0&disablekb=1"
+          title="Mahabharata Introduction"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
+          frameBorder="0"
+          onEnded={handleVideoEnd}
+        />
+      </div>
+      <div className="absolute top-50 left-0 w-full h-full flex flex-col items-center justify-center z-10 bg-opacity-40">
         {/*<div className="absolute top-[-100] left-0 w-full z-20 flex justify-center bg-opacity-60 py-4"><img
           src="/Mahabharatam-eng.png"
           alt="Mahabharatam Logo"

@@ -1,9 +1,16 @@
 "use client";
 
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+};
 
 const navLinks = [
-  { href: "/familytree", label: "Genealogy" },
-  { href: "#books", label: "Books" },
+  { href: "/home", label: "Home" },
+  { href: "/home#books", label: "Books" },
+  { href: "/home#familytree", label: "Genealogy" },
 ];
 
 
@@ -39,6 +46,7 @@ export default function TopBar() {
             key={link.href}
             href={link.href}
             className="hover:underline relative"
+            onClick={() => !link.href.includes("#") && scrollToTop()}
           >
             {link.label}
           </a>
@@ -47,7 +55,7 @@ export default function TopBar() {
         <ModeToggle />
       </nav>
       {/* Mobile hamburger */}
-      <div className="md:hidden flex items-center text-black">
+      <div className="md:hidden flex items-center text-black dark:text-white">
         <button
           className="p-2 rounded focus:outline-none focus:ring-2 focus:ring-gray-400"
           onClick={() => setMenuOpen((v) => !v)}
@@ -60,13 +68,16 @@ export default function TopBar() {
       </div>
       {/* Mobile menu */}
       {menuOpen && (
-        <nav className="absolute top-full left-0 w-full  flex flex-col gap-4 py-4 px-6 z-50 md:hidden animate-fade-in transition-all duration-300">
+        <nav className="absolute top-full bg-white dark:bg-black left-0 w-full  flex flex-col gap-4 py-4 px-6 z-50 md:hidden animate-fade-in transition-all duration-300">
           {navLinks.map((link, idx) => (
             <a
               key={link.href}
               href={link.href}
               className="hover:underline dark:text-white text-lg font-medium"
-              onClick={() => setMenuOpen(false)}
+              onClick={() => {
+                setMenuOpen(false);
+                !link.href.includes("#") && scrollToTop();
+              }}
             >
               {link.label}
             </a>

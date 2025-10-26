@@ -7,7 +7,7 @@ export default function HeroSection() {
 
   return (
     <div className="w-full h-full flex flex-col items-center justify-center px-5 text-center my-28">
-      <div className=" mt-55">
+      <div className="md:mt-55">
         <div className="text-5xl md:text-7xl font-semibold text-[#CF932B]">
           The Epic of Ages
         </div>

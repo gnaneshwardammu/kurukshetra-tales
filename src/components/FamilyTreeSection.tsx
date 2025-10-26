@@ -15,8 +15,9 @@ function FamilyNode({ name, img }: { name: string; img: string }) {
 }
 export default function FamilyTreeSection() {
   return (
-    <section className="w-full py-8" id="familyTree">
-
+    <section className="w-full py-8" id="familytree">
+       <h2 className="text-7xl mt-20 font-bold mb-2">Genealogy</h2>
+      <p className="mb-6 text-muted-foreground">Family Tree of the Mahabharatam.</p>
       <div className="w-full overflow-x-auto">
         <div className="w-full  py-2 relative">
           <div className="relative w-full px-28" style={{paddingBottom: '56.25%', height: 0}}>
