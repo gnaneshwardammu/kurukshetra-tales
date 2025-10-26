@@ -3,7 +3,25 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import BackButton from "./BackButton";
 
-export default function Page({ params }: { params: { characterId: string } }) {
+type PageProps = {
+    params: {
+        characterId: string;
+    };
+    searchParams: Record<string, string | string[] | undefined>;
+};
+
+async function generateMetadata({ params }: PageProps) {
+    const id = Number(params.characterId);
+    const character = characters.find((c) => c.id === id);
+    
+    return {
+        title: character ? `${character.name} - Character Details` : 'Character Not Found'
+    };
+}
+
+export { generateMetadata };
+
+export default async function Page({ params }: PageProps) {
     const id = Number(params.characterId);
     const character = characters.find((c) => c.id === id);
 
