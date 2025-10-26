@@ -79,7 +79,9 @@ export default function TopBar() {
               className="hover:underline dark:text-white text-lg font-medium"
               onClick={() => {
                 setMenuOpen(false);
-                !link.href.includes("#") && scrollToTop();
+                if (!link.href.includes("#")) {
+                  scrollToTop();
+                }
               }}
             >
               {link.label}

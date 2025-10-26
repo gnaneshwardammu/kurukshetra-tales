@@ -1,11 +1,15 @@
+import Image from "next/image";
+
 // Simple node for family tree: shows image and name
 function FamilyNode({ name, img }: { name: string; img: string }) {
   return (
     <div className="flex flex-col items-center w-28 mx-2">
       <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-gray-400 bg-white flex items-center justify-center">
-        <img
+        <Image
           src={img}
           alt={name}
+          width={80}
+          height={80}
           className="object-cover w-full h-full"
         />
       </div>
@@ -21,7 +25,7 @@ export default function FamilyTreeSection() {
       <div className="w-full overflow-x-auto">
         <div className="w-full  py-2 relative">
           <div className="relative w-full px-28" style={{paddingBottom: '56.25%', height: 0}}>
-            <img src="/geneology.jpg" alt="" />
+            <Image src="/geneology.jpg" alt="Family Tree" width={1200} height={675} />
           </div>
         </div>
       </div>

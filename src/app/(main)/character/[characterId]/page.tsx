@@ -3,14 +3,13 @@ import { characters } from "@/lib/characters";
 import { notFound, useRouter } from "next/navigation";
 import Image from "next/image";
 
-type Props = {
+interface PageProps {
     params: {
         characterId: string
-    },
-    searchParams: { [key: string]: string | string[] | undefined }
+    }
 }
 
-export default function CharacterDetailPage({ params, searchParams }: Props) {
+export default function CharacterDetailPage({ params }: PageProps) {
     const router = useRouter();
     const id = Number(params.characterId);
     const character = characters.find((c) => c.id === id);
