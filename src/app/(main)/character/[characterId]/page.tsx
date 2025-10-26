@@ -5,15 +5,17 @@ import Image from "next/image";
 import BackButton from "@/components/BackButton";
 
 export default async function Page({ 
-    params 
-}: { 
-    params: { characterId: string } 
+    params: paramsPromise,
+}: {
+    params: Promise<{ characterId: string }>;
 }) {
-    const id = Number(params.characterId);
+    const { characterId } = await paramsPromise;
+    const id = Number(characterId);
     const character = characters.find((c) => c.id === id);
 
     if (!character) {
         notFound();
+        return null; // This line is needed to satisfy TypeScript
     }
 
     return (
