@@ -1,22 +1,5 @@
 import Image from "next/image";
 
-// Simple node for family tree: shows image and name
-function FamilyNode({ name, img }: { name: string; img: string }) {
-  return (
-    <div className="flex flex-col items-center w-28 mx-2">
-      <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-gray-400 bg-white flex items-center justify-center">
-        <Image
-          src={img}
-          alt={name}
-          width={80}
-          height={80}
-          className="object-cover w-full h-full"
-        />
-      </div>
-      <span className="mt-2 text-center text-xs font-semibold whitespace-nowrap">{name}</span>
-    </div>
-  );
-}
 export default function FamilyTreeSection() {
   return (
     <section className="w-full py-8" id="familytree">

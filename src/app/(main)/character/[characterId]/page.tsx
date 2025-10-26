@@ -1,15 +1,16 @@
 "use client";
+
 import { characters } from "@/lib/characters";
 import { notFound, useRouter } from "next/navigation";
 import Image from "next/image";
 
-interface PageProps {
+type Props = {
     params: {
-        characterId: string
-    }
-}
+        characterId: string;
+    };
+};
 
-export default function CharacterDetailPage({ params }: PageProps) {
+export default function CharacterDetailPage({ params }: Props) {
     const router = useRouter();
     const id = Number(params.characterId);
     const character = characters.find((c) => c.id === id);
