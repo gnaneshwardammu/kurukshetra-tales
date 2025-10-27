@@ -1,23 +1,23 @@
 import BookCard from "./BookCard";
 
 const books = [{
-  id: "1",
+  id: "e715dc1501",
   title: `Ādhi Parva `,
   image: "/adhiparva.jpg",
 },{
-  id: "2",
+  id: "5eb1e043d6",
   title: `Sabhā Parva `,
   image: "/sabhaparva.jpg",
 },{
-  id: "3",
+  id: "1dc7109c19",
   title: `Āraṇyaka Parva `,
   image: "/vana.jpg",
 },{
-  id: "4",
+  id: "117712de21",
   title: `Virāṭa Parva `,
   image: "/virataparva.jpg",
 },{
-  id: "5",
+  id: "9776d29dd6",
   title: `Udyoga Parva `,
   image: "/udyogaparva.jpg",
 },{
