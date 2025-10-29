@@ -21,11 +21,11 @@ const books = [{
   title: `Udyoga Parva `,
   image: "/udyogaparva.jpg",
 },{
-  id: "6",
+  id: "5fad00309f",
   title: `Bhishma Parva `,
   image: "/bhishmaparva.jpg",
 },{
-  id: "7",
+  id: "5fb05e8148",
   title: `Drona Parva `,
   image: "/dronaparva.jpg",
 },{
@@ -41,11 +41,11 @@ const books = [{
   title: `Sauptika Parva `,
   image: "/saupatikaparva.jpg",
 },{
-  id: "11",
+  id: "566ba3b4d7",
   title: `Strī Parva `,
   image: "/streeparva.jpg",
 },{
-  id: "12",
+  id: "12c3f5938e",
   title: `Shanti Parva `,
   image: "/shantiparva.jpg",
 },{
@@ -69,7 +69,7 @@ const books = [{
   title: `Prayāṇa Parva `,
   image: "/mahaprasthanikaparva.jpg",
 },{
-  id: "18",
+  id: "d847696021",
   title: `Svargarohaṇa Parva `,
   image: "/swaragarhanaparva.jpg",
 }
