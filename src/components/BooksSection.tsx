@@ -29,15 +29,15 @@ const books = [{
   title: `Drona Parva `,
   image: "/dronaparva.jpg",
 },{
-  id: "8",
+  id: "d1e3bb21c8",
   title: `Karna Parva `,
   image: "/karnaparva.jpg",
 },{
-  id: "9",
+  id: "17a6ab2a3d",
   title: `Shalya Parva `,
   image: "/shalyaparva.jpg",
 },{
-  id: "10",
+  id: "da278cd84a",
   title: `Sauptika Parva `,
   image: "/saupatikaparva.jpg",
 },{
