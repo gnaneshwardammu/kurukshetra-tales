@@ -8,9 +8,9 @@ export default function BackButton() {
     return (
         <button
             onClick={() => router.push("/home")}
-            className="mt-8 px-5 py-2 bg-orange-700 text-white rounded-full shadow hover:bg-orange-600 transition-colors"
+            className=" px-5 py-2 bg-orange-600 text-white rounded-full shadow hover:bg-orange-700 transition-colors"
         >
-            ← Back to Home
+            Back to Home
         </button>
     );
 }

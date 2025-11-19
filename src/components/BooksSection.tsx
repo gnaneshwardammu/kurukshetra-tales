@@ -1,6 +1,6 @@
 import BookCard from "./BookCard";
 
-const books = [{
+export const books = [{
   id: "e715dc1501",
   title: `Ādhi Parva `,
   image: "/adhiparva.jpg",
